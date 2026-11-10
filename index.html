@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- PURPOSE: Load Bootstrap's responsive layout and component styles before the site's custom stylesheet. -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- PURPOSE: Declare the document character encoding so punctuation and symbols render correctly. -->
+  <meta charset="utf-8">
+  <!-- PURPOSE: Set the layout viewport so responsive styles use the device's actual screen width. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- PURPOSE: Set the browser chrome color to coordinate with the dark site theme. -->
+  <meta name="theme-color" content="#101820">
+  <!-- PURPOSE: Provide a concise description for search engines and link previews. -->
+  <meta name="description" content="SJ Mobile Mechanic brings 24/7 emergency breakdown help, servicing and repairs to you.">
+  <!-- PURPOSE: Set the title shown in browser tabs and bookmarks. -->
+  <title>SJ — 24/7 Mobile Mechanic</title>
+  <!-- PURPOSE: Load the site's responsive layout, theme, and component styling. -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 📝 SECTION: Fixed responsive navigation. navbar-expand-md switches from a collapsed menu to expanded links at the md breakpoint; navbar-dark sets light text for the dark bar; fixed-top anchors it to the viewport top. -->
+  <!-- PURPOSE: Keep the main links available while moving through the page. -->
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top site-nav" aria-label="Main navigation">
+    <!-- Bootstrap class: container centers the navigation content and applies responsive side padding. -->
+    <div class="container">
+      <!-- ← CHANGE BUSINESS NAME HERE (also update the footer business name) -->
+      <!-- PURPOSE: Brand/home link; the jQuery code decorates this text with an orange monogram and wordmark. -->
+      <!-- 🔗 Links to: the top hero section with id="home". -->
+      <a class="navbar-brand" href="#home">SJ — Mobile Mechanic</a>
+      <!-- PURPOSE: Bootstrap's collapse toggle opens and closes the mobile navigation menu. -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavigation" aria-controls="mainNavigation" aria-expanded="false" aria-label="Toggle navigation">
+        <!-- Bootstrap class: navbar-toggler-icon displays the hamburger menu icon. -->
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Bootstrap classes: collapse navbar-collapse hide links on small screens until toggled. -->
+      <div class="collapse navbar-collapse" id="mainNavigation">
+        <!-- Bootstrap classes: navbar-nav formats the links; ms-auto pushes them right; align-items-md-center centers them on desktop. -->
+        <ul class="navbar-nav ms-auto align-items-md-center">
+          <!-- Bootstrap class: nav-item groups each navigation link. -->
+          <!-- 🔗 Links to: the top hero section with id="home". -->
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <!-- 🔗 Links to: the service cards section with id="services". -->
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <!-- Bootstrap class: nav-book gives the booking link its orange call-to-action styling. -->
+          <!-- 🔗 Links to: the booking form section with id="booking". -->
+          <li class="nav-item"><a class="nav-link nav-book" href="#booking">Book Now</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PURPOSE: Wrap the page's primary content, excluding navigation and footer. -->
+  <main>
+    <!-- 📝 SECTION: Hero introduction. The background and centered text introduce the mechanic service. -->
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <!-- PURPOSE: Constrain the hero copy to a readable width and center it over the background image. -->
+      <div class="hero-content">
+        <!-- PURPOSE: Short introductory label above the main heading. -->
+        <p class="hero-kicker">Reliable help, wherever you are</p>
+        <!-- PURPOSE: The page's primary heading, named by the hero section for assistive technology. -->
+        <h1 id="hero-title">SJ — 24/7 Mobile Mechanic</h1>
+        <!-- PURPOSE: Summarize the available emergency, servicing, and repair work. -->
+        <p class="hero-subtitle">Emergency Breakdowns • Servicing • Repairs — We Come To You, Any Time</p>
+        <!-- PURPOSE: Highlight insurance, coverage, and callout-fee assurances. -->
+        <p class="hero-trust">Fully Insured <span aria-hidden="true">•</span> All Areas <span aria-hidden="true">•</span> No Callout Fee</p>
+        <!-- 🔗 Links to: the service cards section with id="services". -->
+        <a class="hero-cta" href="#services">Explore our services</a>
+      </div>
+    </section>
+
+    <!-- 📝 SECTION: Service choices. Bootstrap's grid places these cards side-by-side on wider screens and stacks them on mobile. -->
+    <section class="services-section" id="services" aria-labelledby="services-title">
+      <!-- Bootstrap class: container keeps the section centered with responsive side gutters. -->
+      <div class="container">
+        <!-- Bootstrap classes: text-center centers the introduction; mb-5 adds space before the cards. -->
+        <div class="text-center mb-5">
+          <!-- PURPOSE: Brief section eyebrow above its main heading. -->
+          <p class="section-eyebrow">On your schedule, wherever you need us</p>
+          <!-- PURPOSE: The accessible heading for the service-choice section. -->
+          <h2 class="section-title" id="services-title">How Can We Help You Today?</h2>
+          <!-- PURPOSE: Explain the two available service paths. -->
+          <p class="section-intro">From an unexpected breakdown to the regular maintenance that keeps you moving, get trusted help at your location.</p>
+        </div>
+        <!-- Bootstrap classes: row creates the grid; g-4 adds gutters; align-items-stretch keeps the cards aligned in height. -->
+        <div class="row g-4 align-items-stretch">
+          <!-- Bootstrap classes: col-12 makes the card full-width on mobile; col-md-6 gives it half-width from the medium breakpoint. -->
+          <div class="col-12 col-md-6">
+            <!-- PURPOSE: Emergency service card; emergency applies its red/orange theme accent. -->
+            <article class="service-card emergency">
+              <!-- PURPOSE: Accessible button toggles the emergency phone number; aria-controls and aria-expanded describe its state. -->
+              <button class="service-trigger" type="button" id="emergencyToggle" aria-expanded="false" aria-controls="emergencyCall">
+              <!-- PURPOSE: Identify the 24/7 emergency breakdown service. -->
+                <span class="service-title">🚨 Emergency Breakdown — 24/7</span>
+              <!-- PURPOSE: Explain availability and the payment arrangement for emergency work. -->
+                <span class="service-copy">Stranded? Don't worry — we're on our way. Available 24 hours a day, 7 days a week, 365 days a year. Pay just 25% now to secure your mechanic, and the remaining 75% only when we arrive and you're happy with the work.</span>
+              <!-- PURPOSE: Prompt users to reveal or hide the phone number; jQuery updates this text as the card toggles. -->
+                <span class="service-action" id="emergencyAction">Tap to reveal our number</span>
+              </button>
+              <!-- Bootstrap class: d-none initially hides the call link; jQuery removes it and animates the reveal. -->
+              <div class="call-reveal d-none" id="emergencyCall">
+              <!-- ← CHANGE PHONE NUMBER HERE (also update the footer phone link) -->
+              <!-- 🔗 Links to: the displayed emergency phone number using the device's telephone handler. -->
+                <a class="call-link" href="tel:07XXXXXXXXXX">📞 Call Now: 07XX XXX XXXX</a>
+              </div>
+            </article>
+          </div>
+          <!-- Bootstrap classes: col-12 makes the card full-width on mobile; col-md-6 places it beside the emergency card on larger screens. -->
+          <div class="col-12 col-md-6">
+            <!-- PURPOSE: Scheduled service card; scheduled applies its theme accent. -->
+            <article class="service-card scheduled">
+              <!-- PURPOSE: Makes the complete service card a keyboard-accessible link to booking. -->
+              <!-- Bootstrap class: text-decoration-none removes the default underline from the whole card link. -->
+              <!-- 🔗 Links to: the booking form section with id="booking". -->
+              <a class="service-trigger text-decoration-none" href="#booking">
+                <!-- PURPOSE: Identify the scheduled-maintenance option. -->
+                <span class="service-title">🔧 Book A Scheduled Service</span>
+                <!-- PURPOSE: Describe the common maintenance jobs and deposit arrangement. -->
+                <span class="service-copy">Plan ahead — oil changes, tyre replacement, filter changes, and more. Book your slot at a time that suits you. Pay 25% upfront to confirm your booking, balance due only when the work is fully completed.</span>
+                <!-- PURPOSE: Call to action within the scheduled-service card. -->
+                <span class="service-action">Book your service</span>
+              </a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 📝 SECTION: Booking form. The form submits named fields to the configured Formspree endpoint. -->
+    <section class="booking-section" id="booking" aria-labelledby="booking-title">
+      <!-- Bootstrap class: container centers the form section with responsive page gutters. -->
+      <div class="container">
+        <!-- PURPOSE: Constrain the form width and provide its dark panel background and padding. -->
+        <div class="booking-panel">
+          <!-- Bootstrap classes: text-center centers the form heading; mb-4 separates it from the fields. -->
+          <div class="text-center mb-4">
+            <!-- PURPOSE: Small label introducing the booking form. -->
+            <p class="section-eyebrow">Tell us what you need</p>
+            <!-- PURPOSE: Accessible heading for the booking section. -->
+            <h2 class="section-title" id="booking-title">📋 Book Your Service</h2>
+          </div>
+          <!-- Sends booking submissions to the Formspree endpoint; replace the placeholder with your form ID. -->
+          <!-- PURPOSE: POST booking data to Formspree; script.js intercepts submit to send it through AJAX. -->
+          <form id="bookingForm" action="https://formspree.io/f/xwloelrw" method="POST">
+            <!-- Bootstrap classes: row creates the form grid; g-3 spaces its fields consistently. -->
+            <div class="row g-3">
+              <!-- Each name attribute becomes a field in the data sent to Formspree. -->
+              <!-- Bootstrap classes: form-label styles field labels; form-control styles text and date inputs with consistent sizing. -->
+              <!-- Bootstrap classes: col-12 stacks this field on mobile; col-md-6 uses half-width at medium sizes and up. -->
+              <div class="col-12 col-md-6">
+                <!-- PURPOSE: Associate the required customer-name label with its input. -->
+                <label class="form-label" for="fullName">Full Name <span aria-hidden="true">*</span></label>
+                <!-- PURPOSE: Collect the customer's name; required validation runs before any network request. -->
+                <input class="form-control" id="fullName" name="fullName" type="text" autocomplete="name" required>
+              </div>
+              <!-- Bootstrap classes: col-12 stacks the phone field on mobile; col-md-6 makes it half-width on larger screens. -->
+              <div class="col-12 col-md-6">
+                <!-- PURPOSE: Associate the required phone label with the phone-number input. -->
+                <label class="form-label" for="phone">Phone Number <span aria-hidden="true">*</span></label>
+                <!-- PURPOSE: Collect a phone number and enable phone-friendly input/autofill. -->
+                <input class="form-control" id="phone" name="phoneNumber" type="tel" autocomplete="tel" required>
+              </div>
+              <!-- Bootstrap classes: col-12 stacks the location field on mobile; col-md-6 makes it half-width on larger screens. -->
+              <div class="col-12 col-md-6">
+                <!-- PURPOSE: Associate the required location label with the postcode input. -->
+                <label class="form-label" for="location">Postcode / Location <span aria-hidden="true">*</span></label>
+                <!-- PURPOSE: Collect the service location and support postcode autofill. -->
+                <input class="form-control" id="location" name="postcode" type="text" autocomplete="postal-code" required>
+              </div>
+              <!-- Bootstrap classes: col-12 stacks the vehicle field on mobile; col-md-6 makes it half-width on larger screens. -->
+              <div class="col-12 col-md-6">
+                <!-- PURPOSE: Associate the required vehicle label with the make-and-model input. -->
+                <label class="form-label" for="vehicle">Vehicle Make &amp; Model <span aria-hidden="true">*</span></label>
+                <!-- PURPOSE: Collect the vehicle make and model. -->
+                <input class="form-control" id="vehicle" name="vehicle" type="text" placeholder="e.g. Ford Focus" required>
+              </div>
+              <!-- Bootstrap classes: col-12 stacks this dropdown on mobile; col-md-6 uses half-width on larger screens. -->
+              <div class="col-12 col-md-6">
+                <!-- PURPOSE: Label the optional job-type selector. -->
+                <label class="form-label" for="service">Service Needed</label>
+                <!-- Bootstrap class: form-select styles the service dropdown to match the other form controls. -->
+                <!-- PURPOSE: Let the customer choose a service category to include with the booking request. -->
+                <select class="form-select" id="service" name="service">
+                  <!-- PURPOSE: Neutral placeholder shown before the customer selects a service. -->
+                  <option value="" selected>Select a service</option>
+                  <!-- PURPOSE: Service categories available for selection. -->
+                  <option>Emergency breakdown</option>
+                  <option>Oil change</option>
+                  <option>Tyre replacement</option>
+                  <option>Filter change</option>
+                  <option>Vehicle servicing</option>
+                  <option>Repairs</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <!-- Bootstrap classes: col-12 stacks the date field on mobile; col-md-6 uses half-width on larger screens. -->
+              <div class="col-12 col-md-6">
+                <!-- PURPOSE: Label the optional preferred appointment date and time field. -->
+                <label class="form-label" for="preferredTime">Preferred Date &amp; Time</label>
+                <!-- PURPOSE: Collect the customer's preferred appointment date and time. -->
+                <input class="form-control" id="preferredTime" name="preferredTime" type="datetime-local">
+              </div>
+              <!-- Bootstrap class: col-12 lets the notes field span the entire form width. -->
+              <div class="col-12">
+                <!-- PURPOSE: Label the optional notes field. -->
+                <label class="form-label" for="notes">Additional Notes</label>
+                <!-- PURPOSE: Collect extra details that may help prepare for the service. -->
+                <textarea class="form-control" id="notes" name="notes" rows="4" placeholder="Anything else we should know?"></textarea>
+              </div>
+              <!-- Bootstrap classes: col-12 spans the form width; pt-2 adds space above the submit controls. -->
+              <div class="col-12 pt-2">
+                <!-- Bootstrap classes: booking-submit applies the custom orange style; w-100 makes the button fill the row. -->
+                <!-- PURPOSE: Submit the booking; script.js disables it while the AJAX request is pending. -->
+                <button class="booking-submit w-100" type="submit">Confirm Booking — Pay 25% Deposit</button>
+                <!-- PURPOSE: Explain the deposit and remaining-balance terms below the submit button. -->
+                <p class="deposit-note">25% deposit required to secure your slot. Balance due only upon job completion. You're in control.</p>
+              </div>
+            </div>
+          </form>
+          <!-- Bootstrap class: d-none keeps this status message hidden until Formspree confirms a successful submission. -->
+          <!-- PURPOSE: Accessible confirmation shown in place of the form after successful submission. -->
+          <div class="success-message d-none" id="bookingSuccess" role="status" tabindex="-1"> Thank you! We'll call you shortly to confirm your booking and payment details.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 📝 SECTION: Footer with business assurance, contact details, service coverage, and opening hours. -->
+  <!-- Bootstrap classes: container centers the footer content; d-flex enables flex layout; flex-column stacks on mobile; flex-md-row switches to a row at md; align-items-center and justify-content-between align and distribute content; gap-2 adds spacing; text-center and text-md-start adapt text alignment. -->
+  <footer class="site-footer">
+    <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2 text-center text-md-start">
+      <!-- PURPOSE: Display copyright and business assurances. -->
+      <p class="mb-0">©️ 2026 SJ Mobile Mechanic — Fully Insured — We Come To You</p>
+      <!-- PURPOSE: Group the footer contact, service-area, and availability details. -->
+      <div class="footer-links">
+        <!-- ← CHANGE PHONE NUMBER HERE (also update the emergency card number) -->
+        <!-- 🔗 Links to: the business phone number using the device's telephone handler. -->
+        <a href="tel:07862888866">Phone: 0786 288 8866</a>
+        <!-- 🔗 Links to: the services section containing service details. -->
+        <a href="#services">Service areas: All areas of Gloucestershire & Cheltenham</a>
+        <!-- PURPOSE: State that emergency mechanic availability is 24 hours a day. -->
+        <!-- Bootstrap classes: d-inline-flex keeps this detail inline while align-items-center vertically centers its text. -->
+        <span class="d-inline-flex align-items-center">Hours: 24/7</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- PURPOSE: Load jQuery before custom jQuery handlers so the $ API is available. -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <!-- PURPOSE: Load Bootstrap's interactive components, including the responsive navbar collapse. -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- PURPOSE: Load navigation, emergency-card, and touch/hover interactions. -->
+  <script src="jquery.js"></script>
+  <!-- PURPOSE: Load the Formspree booking submission handler after jQuery. -->
+  <script src="script.js"></script>
+</body>
+</html>
